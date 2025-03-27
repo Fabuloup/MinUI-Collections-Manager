@@ -1,0 +1,1 @@
+# MinUI-Collections-Manager
