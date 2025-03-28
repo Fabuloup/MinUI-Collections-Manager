@@ -9,11 +9,12 @@ public class Game
         set
         {
             _realName = value;
-            DisplayName = System.Text.RegularExpressions.Regex.Match(_realName, @"(.+?)(?:\s?\([^\)]+\))*\.\w+").Groups[1].Value;
+            DisplayName = System.Text.RegularExpressions.Regex.Match(_realName, @"(.+?)(?:\s?\([^\)]+\))*\.\w+$").Groups[1].Value;
         }
     }
     
     public string DisplayName { get; private set; }
+    public string DisplayNameWithParent => $"{ParentFolder}/{DisplayName}";
     
     public bool IsInError { get; set; } = false;
     
@@ -37,6 +38,6 @@ public class Game
 
     public override string ToString()
     {
-        return $"{ParentFolder}/{DisplayName}";
+        return DisplayName;
     }
 }
