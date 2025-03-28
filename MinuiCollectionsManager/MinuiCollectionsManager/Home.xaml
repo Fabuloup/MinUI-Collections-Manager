@@ -7,7 +7,7 @@
       mc:Ignorable="d"
       Title="Home" Height="450" Width="800">
     <Grid>
-        <Button Content="Open MinUI SD Card" Click="LoadFolder_Click" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Height="80" Width="160" Margin="10"
+        <Button Content="Open MinUI SD Card" Click="LoadFolder_Click" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Height="80" Width="180" Margin="10"
                 Background="Black" Foreground="White">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
