@@ -96,7 +96,7 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding DisplayNameWithParentAlt}" Width="220" MaxWidth="220" TextTrimming="CharacterEllipsis">
+                                <TextBlock Text="{Binding DisplayNameWithParentAlt}" Width="215" MaxWidth="215" TextTrimming="CharacterEllipsis">
                                     <TextBlock.Style>
                                         <Style TargetType="TextBlock">
                                             <Style.Triggers>
@@ -107,7 +107,7 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <Button Content="X" Click="DeleteGame_Click" Tag="{Binding}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Height="20" Width="20" Margin="5 0"
+                                <Button Content="X" Click="DeleteGame_Click" Tag="{Binding}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Height="20" Width="20" Margin="5 0 0 0"
                                         FontWeight="Black" Background="LightCoral" Foreground="Black">
                                     <Button.Template>
                                         <ControlTemplate TargetType="Button">
