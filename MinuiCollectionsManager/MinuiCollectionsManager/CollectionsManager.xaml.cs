@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using MinuiCollectionsManager.Models;
+using Button = System.Windows.Controls.Button;
 using DataObject = System.Windows.Forms.DataObject;
 using DragDropEffects = System.Windows.DragDropEffects;
 using DragEventArgs = System.Windows.DragEventArgs;
@@ -301,6 +302,20 @@ public partial class CollectionsManager : Page
             }
         }
         e.Handled = true;
+    }
+
+    private void DeleteGame_Click(object sender, RoutedEventArgs e)
+    {
+        var button = sender as Button;
+        var game = button?.Tag as Game;
+        var selectedCollection = CollectionsComboBox.SelectedItem as Collection;
+    
+        if (game != null && selectedCollection != null)
+        {
+            selectedCollection.Games.Remove(game);
+            CollectionGamesList.ItemsSource = null;
+            CollectionGamesList.ItemsSource = selectedCollection.Games;
+        }
     }
     #endregion
     
