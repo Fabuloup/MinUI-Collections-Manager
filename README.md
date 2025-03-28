@@ -19,7 +19,7 @@
     ![Collections Screen](images/mcm_collections.png)
     1. Enter the desired name for your collection in the popup window.
 4. Add games to a collection by dragging them from the list on the right into the collection's list.
-5. Delete a collection using the <span style="color:red;">"X"</span> button.
+5. Delete a collection using the $${\color{"X"}Red}$$ button.
 6. Switch between collections using the dropdown menu.
 7. Save your changes by clicking the save button; unsaved changes will be discarded.
-    1. Games displayed in <span style="color:red;">red</span> within a collection are missing and will be removed from the collection when this action is performed.
+    1. Games displayed in $${\color{red}Red}$$ within a collection are missing and will be removed from the collection when this action is performed.
