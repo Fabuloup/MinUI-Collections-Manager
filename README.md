@@ -1,26 +1,10 @@
 <div align="center">
-<a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-</a>
-
 <h1 align="center">MinUI Collections Manager</h1>
 
 <p align="center">
     Effortlessly manage your MinUI game collections!
 </p>
 </div>
-
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#usage">Usage</a></li>
-      </ul>
-    </li>
-  </ol>
-</details>
 
 ## Getting Started
 
