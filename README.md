@@ -16,11 +16,11 @@
     ![Home Screen](images/mcm_home.png)
 2. Select your SD card in the file explorer.
 3. Create a new collection by clicking the "+" button next to the dropdown menu.
-    ![Collections Screen](images/mcm_collections.png)
     - Enter the desired name for your collection in the popup window.
+    ![Collections Screen](images/mcm_collections.png)
 4. Add games to a collection by dragging them from the list on the right into the collection's list.
 5. Delete a collection using the "X" button.
 6. Switch between collections using the dropdown menu.
 7. Save your changes by clicking the save button; unsaved changes will be discarded.
-    - > [!CAUTION]
-    > Games displayed in red within a collection are missing and will be removed from the collection when this action is performed.
+> [!CAUTION]
+> Games displayed in red within a collection are missing and will be removed from the collection when this action is performed.
