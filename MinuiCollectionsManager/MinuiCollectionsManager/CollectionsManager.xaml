@@ -7,6 +7,112 @@
       mc:Ignorable="d"
       Title="CollectionsManager" Height="450" Width="800">
     <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
         
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                <Button Content="Open MinUI SD Card" Click="LoadFolder_Click" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Height="30" Width="110" Margin="10"
+                        Background="Black" Foreground="White">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="0"
+                                    CornerRadius="15">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Content="Refresh" Click="RefreshCollections_Click" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Height="30" Width="90" Margin="10"
+                        Background="Black" Foreground="White">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="0"
+                                    CornerRadius="15">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Content="Save" Click="SaveCollections_Click" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Height="30" Width="90" Margin="10"
+                        Background="PaleGreen" Foreground="Black">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="0"
+                                    CornerRadius="15">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <ComboBox x:Name="CollectionsComboBox" ItemsSource="{Binding _collections}" DisplayMemberPath="Name" FontSize="10" SelectedIndex="0" Width="200" Height="25" Margin="5 0" SelectionChanged="CollectionsComboBox_SelectionChanged"/>
+                    <Button Content="+" Click="AddCollection_Click" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Height="20" Width="20"
+                            FontWeight="Black" Background="Black" Foreground="White">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="0"
+                                        CornerRadius="15">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Content="X" Click="DeleteCollection_Click" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Height="20" Width="20" Margin="10"
+                            FontWeight="Black" Background="LightCoral" Foreground="Black">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="0"
+                                        CornerRadius="15">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+                <ListBox x:Name="CollectionGamesList" Height="320" MaxHeight="320" Margin="5 0" AllowDrop="True"
+                         Drop="CollectionGamesList_Drop" DragOver="CollectionGamesList_DragOver"
+                         PreviewMouseLeftButtonDown="CollectionGamesList_PreviewMouseLeftButtonDown"
+                         PreviewMouseMove="CollectionGamesList_PreviewMouseMove">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DisplayNameWithParentAlt}">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsInError}" Value="True">
+                                                <Setter Property="Foreground" Value="Red"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+            <ListBox x:Name="GamesList" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding _games}" DisplayMemberPath="DisplayNameWithParent"
+                     MaxHeight="320" MaxWidth="480" PreviewMouseLeftButtonDown="GamesList_PreviewMouseLeftButtonDown" 
+                     PreviewMouseMove="GamesList_PreviewMouseMove" AllowDrop="True"/>
+        </Grid>
     </Grid>
 </Page>

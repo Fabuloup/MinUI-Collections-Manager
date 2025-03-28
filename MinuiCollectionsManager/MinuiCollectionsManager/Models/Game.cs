@@ -15,16 +15,14 @@ public class Game
     
     public string DisplayName { get; private set; }
     public string DisplayNameWithParent => $"{ParentFolder}/{DisplayName}";
+    public string DisplayNameWithParentAlt => $"{DisplayName} ({ParentFolder})";
     
     public bool IsInError { get; set; } = false;
     
-    public Game(string realName, Folder? parentFolder = null)
+    public Game(string realName, Folder parentFolder)
     {
         RealName = realName;
-        if (parentFolder != null)
-        {
-            ParentFolder = parentFolder;
-        }
+        ParentFolder = parentFolder;
     }
     
     #region Navigation
